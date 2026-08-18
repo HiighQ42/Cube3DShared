@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
+/*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/12 12:00:25 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/08/16 19:20:23 by shiraishidais    ###   ########.fr       */
+/*   Created: 2026/08/12 12:00:25 by shiraishida       #+#    #+#             */
+/*   Updated: 2026/08/18 14:30:08 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+#include "graphics.h"
 
 int	main(int ac, char **av)
 {
@@ -27,5 +28,7 @@ int	main(int ac, char **av)
 		return (error_message(1), 1);
 	if (parse_map(&data->map))
 		return (free_data(data), error_message(3), 1);
+	if (!run_graphics(data))
+		return (1);
 	return (free_data(data), 0);
 }

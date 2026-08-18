@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   list_funcs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
+/*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/13 10:29:56 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/08/15 18:10:04 by shiraishidais    ###   ########.fr       */
+/*   Created: 2026/08/13 10:29:56 by shiraishida       #+#    #+#             */
+/*   Updated: 2026/08/18 14:03:05 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-t_prelist	*make_new_node(char *content)
+t_prelist *make_new_node(char *content)
 {
-	t_prelist	*new;
+	t_prelist *new;
 
 	new = ft_calloc(1, sizeof(t_prelist));
 	if (!new)
@@ -24,9 +24,9 @@ t_prelist	*make_new_node(char *content)
 	return (new);
 }
 
-void	node_add_back(t_prelist **head, t_prelist *new, int fd)
+void node_add_back(t_prelist **head, t_prelist *new, int fd)
 {
-	t_prelist	*tmp;
+	t_prelist *tmp;
 
 	if (!new)
 	{
@@ -38,7 +38,7 @@ void	node_add_back(t_prelist **head, t_prelist *new, int fd)
 	if (!*head)
 	{
 		*head = new;
-		return ;
+		return;
 	}
 	tmp = *head;
 	while (tmp->next)
@@ -46,9 +46,9 @@ void	node_add_back(t_prelist **head, t_prelist *new, int fd)
 	tmp->next = new;
 }
 
-void	free_list(t_prelist *head)
+void free_list(t_prelist *head)
 {
-	t_prelist	*tmp;
+	t_prelist *tmp;
 
 	while (head)
 	{
@@ -59,9 +59,9 @@ void	free_list(t_prelist *head)
 	}
 }
 
-t_prelist	*skip_to_map(t_prelist *list)
+t_prelist *skip_to_map(t_prelist *list)
 {
-	char	*tmp;
+	char *tmp;
 
 	if (!list)
 		return (list);
@@ -69,10 +69,10 @@ t_prelist	*skip_to_map(t_prelist *list)
 	{
 		tmp = ft_strtrim(list->contents, " ");
 		if (ft_strncmp(tmp, "\n", ft_strlen(tmp)) && ft_strncmp(tmp, "",
-				ft_strlen(tmp)))
+																ft_strlen(tmp)))
 		{
 			free(tmp);
-			break ;
+			break;
 		}
 		free(tmp);
 		list = list->next;
@@ -80,9 +80,9 @@ t_prelist	*skip_to_map(t_prelist *list)
 	return (list);
 }
 
-int	skip_to_last(t_prelist *node)
+int skip_to_last(t_prelist *node)
 {
-	char	*tmp;
+	char *tmp;
 
 	while (node)
 	{
