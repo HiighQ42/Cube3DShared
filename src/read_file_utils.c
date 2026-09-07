@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
+/*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/14 12:15:16 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/08/16 18:29:22 by shiraishidais    ###   ########.fr       */
+/*   Created: 2026/08/14 12:15:16 by shiraishida       #+#    #+#             */
+/*   Updated: 2026/09/07 19:57:12 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	make_index_array(int *index_array)
 	}
 }
 
-int	check_array(int index_array[7])
+int check_array(int *index_array)
 {
 	int	i;
 	int	flag;

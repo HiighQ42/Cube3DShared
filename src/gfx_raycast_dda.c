@@ -6,7 +6,7 @@
 /*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 13:20:20 by nhamad            #+#    #+#             */
-/*   Updated: 2026/09/05 13:30:01 by nhamad           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:55:58 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int cell_is_wall(t_Data *scene, t_point cell)
     if (cell.y >= scene->map.size || map[cell.y] == NULL)
         return (1);
     if (map[cell.y][cell.x] == '\0' || map[cell.y][cell.x] == ' ')
-        reurn (1);
+        return (1);
     return (map[cell.y][cell.x] == '1');
 }
 

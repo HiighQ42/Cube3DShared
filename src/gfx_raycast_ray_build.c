@@ -6,7 +6,7 @@
 /*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 12:06:41 by nhamad            #+#    #+#             */
-/*   Updated: 2026/09/05 12:22:29 by nhamad           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:59:18 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int valid_column(int x, int width)
 {
-    if (width <= 0)
+    if (width <= 0 || x < 0 || x >= width)
         return (0);
-    if (x < 0 || x >= width)
-        return (1);
+    return (1);
 }
 
 double camera_position(int x, int width)

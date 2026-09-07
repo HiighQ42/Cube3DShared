@@ -6,7 +6,7 @@
 /*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 12:23:39 by nhamad            #+#    #+#             */
-/*   Updated: 2026/09/05 12:42:39 by nhamad           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:55:30 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ double next_y_gap(t_vec position, t_vec ray_dir)
     return (1.0 - fraction);
 }
 
-double boundry_distance(double gap, double component)
+double boundary_distance(double gap, double component)
 {
     if (fabs(component) < EPSILON)
         return (RAY_FAR);

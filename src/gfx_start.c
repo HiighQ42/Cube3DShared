@@ -6,7 +6,7 @@
 /*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 14:04:19 by nhamad            #+#    #+#             */
-/*   Updated: 2026/08/18 14:32:36 by nhamad           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:54:56 by nhamad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int prepare_graphics(t_game *game, t_Data *scene)
     return (1);
 }
 
-int run_grapics(t_Data *scene)
+int run_graphics(t_Data *scene)
 {
     t_game game;
     if (scene == NULL)
