@@ -62,9 +62,11 @@ int	flood_fill_space(t_Parse *data)
 	return (0);
 }
 
-void	flood_space(int x_pos, int y_pos, t_Parse *data) //debug: changed condition
+void	flood_space(int x_pos, int y_pos, t_Parse *data)
+		// debug: changed condition
 {
-	if (x_pos < 0 || y_pos < 0 || x_pos > data->width - 1|| y_pos > data->hight)
+	if (x_pos < 0 || y_pos < 0 || x_pos > data->width - 1
+		|| y_pos > data->hight)
 	{
 		data->flag++;
 		return ;

@@ -44,10 +44,10 @@ int	*read_through_list(t_prelist *list)
 			return (free(ret), NULL);
 		check_tab = ft_split(without_newline, ' ');
 		if (!check_tab)
-			return (free(ret), free(without_newline),NULL);
+			return (free(ret), free(without_newline), NULL);
 		if (typo_check(check_tab) != 2)
-			return (free(ret), free(without_newline),free_tab(check_tab), error_message_in_read(0),
-				NULL);
+			return (free(ret), free(without_newline), free_tab(check_tab),
+				error_message_in_read(0), NULL);
 		check_typeid(check_tab[0], ret, &element_count);
 		free_utils(without_newline, check_tab);
 		list = list->next;

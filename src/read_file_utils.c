@@ -52,7 +52,7 @@ void	make_index_array(int *index_array)
 	}
 }
 
-int check_array(int *index_array)
+int	check_array(int *index_array)
 {
 	int	i;
 	int	flag;
