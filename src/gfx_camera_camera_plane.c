@@ -12,11 +12,11 @@
 
 #include "graphics.h"
 
-t_vec make_camera_plane(t_vec direction, double scale)
+t_vec	make_camera_plane(t_vec direction, double scale)
 {
-    t_vec plane;
+	t_vec	plane;
 
-    plane.x = -direction.y * scale;
-    plane.y = direction.x * scale;
-    return (plane);
+	plane.x = -direction.y * scale;
+	plane.y = direction.x * scale;
+	return (plane);
 }

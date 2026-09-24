@@ -12,40 +12,40 @@
 
 #include "graphics.h"
 
-char *pixel_address(t_image *image, t_point point)
+char	*pixel_address(t_image *image, t_point point)
 {
-    int bytes;
-    long offset;
+	int		bytes;
+	long	offset;
 
-    if (image == NULL || image->addr == NULL)
-        return (NULL);
-    if (point.x < 0 || point.y < 0)
-        return (NULL);
-    if (point.x >= image->width || point.y >= image->height)
-        return (NULL);
-    bytes = image->bpp / 8;
-    offset = point.y * image->line_len + point.x * bytes;
-    return (image->addr + offset);
+	if (image == NULL || image->addr == NULL)
+		return (NULL);
+	if (point.x < 0 || point.y < 0)
+		return (NULL);
+	if (point.x >= image->width || point.y >= image->height)
+		return (NULL);
+	bytes = image->bpp / 8;
+	offset = point.y * image->line_len + point.x * bytes;
+	return (image->addr + offset);
 }
 
-int write_pixel(t_image *image, t_point point, int color)
+int	write_pixel(t_image *image, t_point point, int color)
 {
-    char *target;
-    int bytes;
-    int i;
-    
-    target = pixel_address(image, point);
-    if (target == NULL)
-        return 0;
-    bytes = image->bpp / 8;
-    i = 0;
-    while (i < bytes)
-    {
-        if (image->endian == 0)
-            target[i] = (color >> (8 * i)) & 255;
-        else
-            target[bytes - 1 - i] = (color >> (8 * i)) & 255;
-        i++;
-    }
-    return (1);
+	char	*target;
+	int		bytes;
+	int		i;
+
+	target = pixel_address(image, point);
+	if (target == NULL)
+		return (0);
+	bytes = image->bpp / 8;
+	i = 0;
+	while (i < bytes)
+	{
+		if (image->endian == 0)
+			target[i] = (color >> (8 * i)) & 255;
+		else
+			target[bytes - 1 - i] = (color >> (8 * i)) & 255;
+		i++;
+	}
+	return (1);
 }

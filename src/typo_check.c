@@ -6,7 +6,7 @@
 /*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 19:00:29 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/09/17 16:06:00 by dshirais         ###   ########.fr       */
+/*   Updated: 2026/08/16 17:56:37 by shiraishidais    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	num_check(char *target)
 		i++;
 	}
 	if (i != 3)
-		return (free(target), free_tab(tab), -1);
+		return (-1);
 	return (free(target), free_tab(tab), 2);
 }
 

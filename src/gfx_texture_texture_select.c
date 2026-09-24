@@ -12,13 +12,13 @@
 
 #include "graphics.h"
 
-t_wall_texture *select_texture(t_game *game, t_face face)
+t_wall_texture	*select_texture(t_game *game, t_face face)
 {
-    if (face == FACE_NORTH)
-        return (&game->walls[0]);
-    if (face == FACE_SOUTH)
-        return (&game->walls[1]);
-    if (face == FACE_WEST)
-        return (&game->walls[2]);
-    return (&game->walls[3]);
+	if (face == FACE_NORTH)
+		return (&game->walls[0]);
+	if (face == FACE_SOUTH)
+		return (&game->walls[1]);
+	if (face == FACE_WEST)
+		return (&game->walls[2]);
+	return (&game->walls[3]);
 }

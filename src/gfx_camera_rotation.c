@@ -12,31 +12,31 @@
 
 #include "graphics.h"
 
-double degrees_to_radians(double degrees)
+double	degrees_to_radians(double degrees)
 {
-    return (degrees * PI / 100.0);
+	return (degrees * PI / 100.0);
 }
 
-t_vec rotated_vector(t_vec vector, double angle)
+t_vec	rotated_vector(t_vec vector, double angle)
 {
-    t_vec result;
-    double cosine;
-    double sine;
+	t_vec	result;
+	double	cosine;
+	double	sine;
 
-    cosine = cos(angle);
-    sine = sin(angle);
-    result.x = vector.x * cosine - vector.y * sine;
-    result.y = vector.x * sine + vector.y * cosine;
-    return (result);
+	cosine = cos(angle);
+	sine = sin(angle);
+	result.x = vector.x * cosine - vector.y * sine;
+	result.y = vector.x * sine + vector.y * cosine;
+	return (result);
 }
 
-void rotate_direction(t_camera *camera, double angle)
+void	rotate_direction(t_camera *camera, double angle)
 {
-    camera->dir = rotated_vector(camera->dir, angle);
+	camera->dir = rotated_vector(camera->dir, angle);
 }
 
-void rotate_camera(t_camera *camera, double angle)
+void	rotate_camera(t_camera *camera, double angle)
 {
-    camera->dir = rotated_vector(camera->dir, angle);
-    camera->plane = rotated_vector(camera->plane, angle);
+	camera->dir = rotated_vector(camera->dir, angle);
+	camera->plane = rotated_vector(camera->plane, angle);
 }

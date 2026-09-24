@@ -12,19 +12,19 @@
 
 #include "graphics.h"
 
-void fill_rect(t_image *image, t_rect rect, int color)
+void	fill_rect(t_image *image, t_rect rect, int color)
 {
-    t_point point;
-    
-    point.y = rect.y;
-    while (point.y < rect.y + rect.height)
-    {
-        point.x = rect.x;
-        while (point.x < rect.x + rect.width)
-        {
-            write_pixel(image, point, color);
-            point.x++;
-        }
-        point.y++;
-    }
+	t_point	point;
+
+	point.y = rect.y;
+	while (point.y < rect.y + rect.height)
+	{
+		point.x = rect.x;
+		while (point.x < rect.x + rect.width)
+		{
+			write_pixel(image, point, color);
+			point.x++;
+		}
+		point.y++;
+	}
 }

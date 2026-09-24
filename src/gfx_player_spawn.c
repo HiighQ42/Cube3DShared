@@ -12,35 +12,35 @@
 
 #include "graphics.h"
 
-static int is_spawn(char cell)
+static int	is_spawn(char cell)
 {
-    return (cell == 'N' || cell == 'S' || cell == 'W' || cell == 'E');
+	return (cell == 'N' || cell == 'S' || cell == 'W' || cell == 'E');
 }
 
-int find_spawn(t_Data *scene, t_spawn *spawn)
+int	find_spawn(t_Data *scene, t_spawn *spawn)
 {
-    int x;
-    int y;
-    char cell;
-    
-    y = 0;
-    while (scene->map.map[y] != NULL)
-    {
-        x = 0;
-        while (scene->map.map[y][x] != '\0')
-        {
-            cell = scene->map.map[y][x];
-            if (is_spawn(cell))
-            {
-                spawn->x = x;
-                spawn->y = y;
-                spawn->orientation = cell;
-                scene->map.map[y][x] = '0';
-                return (1);
-            }
-            x++;
-        }
-        y++;
-    }
-    return (0);
+	int		x;
+	int		y;
+	char	cell;
+
+	y = 0;
+	while (scene->map.map[y] != NULL)
+	{
+		x = 0;
+		while (scene->map.map[y][x] != '\0')
+		{
+			cell = scene->map.map[y][x];
+			if (is_spawn(cell))
+			{
+				spawn->x = x;
+				spawn->y = y;
+				spawn->orientation = cell;
+				scene->map.map[y][x] = '0';
+				return (1);
+			}
+			x++;
+		}
+		y++;
+	}
+	return (0);
 }

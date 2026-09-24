@@ -12,26 +12,26 @@
 
 #include "graphics.h"
 
-t_vec start_direction(char orientation)
+t_vec	start_direction(char orientation)
 {
-    t_vec direction;
-    
-    direction.x = 1.0;
-    direction.y = 0.0;
-    if (orientation == 'N')
-    {
-        direction.x = 0.0;
-        direction.y = -1.0;
-    }
-    if (orientation == 'S')
-    {
-        direction.x = 0.0;
-        direction.y = 1.0;
-    }
-    if (orientation == 'W')
-    {
-        direction.x = -1.0;
-        direction.y = 0.0;
-    }
-    return (direction);
+	t_vec	direction;
+
+	direction.x = 1.0;
+	direction.y = 0.0;
+	if (orientation == 'N')
+	{
+		direction.x = 0.0;
+		direction.y = -1.0;
+	}
+	if (orientation == 'S')
+	{
+		direction.x = 0.0;
+		direction.y = 1.0;
+	}
+	if (orientation == 'W')
+	{
+		direction.x = -1.0;
+		direction.y = 0.0;
+	}
+	return (direction);
 }

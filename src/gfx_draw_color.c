@@ -12,24 +12,24 @@
 
 #include "graphics.h"
 
-int make_rgb(t_Color *color)
+int	make_rgb(t_Color *color)
 {
-    return ((color->range[0] << 16) | (color->range[1] << 8) | color->range[2]);
+	return ((color->range[0] << 16) | (color->range[1] << 8) | color->range[2]);
 }
 
-void fill_image(t_image *image, int color)
+void	fill_image(t_image *image, int color)
 {
-    t_point point;
-    
-    point.y = 0;
-    while (point.y < image->height)
-    {
-        point.x = 0;
-        while (point.x < image->width)
-        {
-            write_pixel(image, point, color);
-            point.x++;
-        }
-        point.y++;
-    }
+	t_point	point;
+
+	point.y = 0;
+	while (point.y < image->height)
+	{
+		point.x = 0;
+		while (point.x < image->width)
+		{
+			write_pixel(image, point, color);
+			point.x++;
+		}
+		point.y++;
+	}
 }

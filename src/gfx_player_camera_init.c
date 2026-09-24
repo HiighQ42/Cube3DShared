@@ -12,15 +12,15 @@
 
 #include "graphics.h"
 
-int init_camera(t_game *game)
+int	init_camera(t_game *game)
 {
-    t_spawn spawn;
+	t_spawn	spawn;
 
-    if (!find_spawn(game->scene, &spawn))
-        return (0);
-    game->camera.pos.x = (double)spawn.x + 0.5;
-    game->camera.pos.y = (double)spawn.y + 0.5;
-    game->camera.dir = start_direction(spawn.orientation);
-    game->camera.plane = make_camera_plane(game->camera.dir, CAMERA_SCALE);
-    return (1);
+	if (!find_spawn(game->scene, &spawn))
+		return (0);
+	game->camera.pos.x = (double)spawn.x + 0.5;
+	game->camera.pos.y = (double)spawn.y + 0.5;
+	game->camera.dir = start_direction(spawn.orientation);
+	game->camera.plane = make_camera_plane(game->camera.dir, CAMERA_SCALE);
+	return (1);
 }

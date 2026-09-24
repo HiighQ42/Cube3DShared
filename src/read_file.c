@@ -6,7 +6,7 @@
 /*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 12:41:55 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/09/17 15:57:13 by dshirais         ###   ########.fr       */
+/*   Updated: 2026/08/16 18:29:42 by shiraishidais    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int	*read_through_list(t_prelist *list)
 			return (free(ret), NULL);
 		check_tab = ft_split(without_newline, ' ');
 		if (!check_tab)
-			return (free(ret), free(without_newline), NULL);
+			return (free(ret), NULL);
 		if (typo_check(check_tab) != 2)
-			return (free(ret), free(without_newline), free_tab(check_tab),
-				error_message_in_read(0), NULL);
+			return (free(ret), free_tab(check_tab), error_message_in_read(0),
+				NULL);
 		check_typeid(check_tab[0], ret, &element_count);
 		free_utils(without_newline, check_tab);
 		list = list->next;

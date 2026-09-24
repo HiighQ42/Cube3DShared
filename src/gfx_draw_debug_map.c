@@ -12,29 +12,29 @@
 
 #include "graphics.h"
 
-void draw_debug_map(t_game *game, t_image *image)
+void	draw_debug_map(t_game *game, t_image *image)
 {
-    t_rect rect;
-    int x;
-    int y;
-    int color;
+	t_rect	rect;
+	int		x;
+	int		y;
+	int		color;
 
-    y = 0;
-    while (game->scene->map.map[y] != NULL)
-    {
-        x = 0;
-        while (game->scene->map.map[y][x] != '\0')
-        {
-            color = 0x30343F;
-            if (game->scene->map.map[y][x] == '1')
-                color = 0xE63946;
-            rect.x = x * DEBUG_CELL;
-            rect.y = y * DEBUG_CELL;
-            rect.width = DEBUG_CELL - 1;
-            rect.height = DEBUG_CELL - 1;
-            fill_rect(image, rect, color);
-            x++;
-        }
-        y++;
-    }
+	y = 0;
+	while (game->scene->map.map[y] != NULL)
+	{
+		x = 0;
+		while (game->scene->map.map[y][x] != '\0')
+		{
+			color = 0x30343F;
+			if (game->scene->map.map[y][x] == '1')
+				color = 0xE63946;
+			rect.x = x * DEBUG_CELL;
+			rect.y = y * DEBUG_CELL;
+			rect.width = DEBUG_CELL - 1;
+			rect.height = DEBUG_CELL - 1;
+			fill_rect(image, rect, color);
+			x++;
+		}
+		y++;
+	}
 }
