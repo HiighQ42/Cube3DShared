@@ -6,7 +6,7 @@
 /*   By: nhamad <nhamad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 10:29:56 by shiraishida       #+#    #+#             */
-/*   Updated: 2026/08/18 14:03:05 by nhamad           ###   ########.fr       */
+/*   Updated: 2026/09/17 16:52:39 by dshirais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	skip_to_last(t_prelist *node)
 		if (!tmp)
 			return (error_message(2), -1);
 		if (ft_strncmp(tmp, "\n", ft_strlen(tmp)))
-			return (error_message_in_read(4), -1);
+			return (error_message_in_read(4), free(tmp), -1);
 		free(tmp);
 		node = node->next;
 	}
