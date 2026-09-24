@@ -33,6 +33,7 @@ int	load_texture(t_game *game, t_wall_texture *texture, char *path)
 	}
 	return (1);
 }
+
 int	map_texture_memory(t_wall_texture *texture)
 {
 	t_image	*image;

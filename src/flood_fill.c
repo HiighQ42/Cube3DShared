@@ -6,7 +6,7 @@
 /*   By: shiraishidaisei <dshirais@student.42vienn  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 16:43:55 by shiraishidais     #+#    #+#             */
-/*   Updated: 2026/08/16 17:19:40 by shiraishidais    ###   ########.fr       */
+/*   Updated: 2026/09/24 15:15:58 by dshirais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ int	flood_fill_space(t_Parse *data)
 
 void	flood_space(int x_pos, int y_pos, t_Parse *data)
 {
-	if (x_pos < 0 || y_pos < 0 || x_pos > data->width || y_pos > data->hight)
+	if (x_pos < 0 || y_pos < 0 || x_pos > data->width - 1
+		|| y_pos > data->hight)
 	{
 		data->flag++;
 		return ;
