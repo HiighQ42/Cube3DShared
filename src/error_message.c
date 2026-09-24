@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <cub3d.h>
 
 void	error_message(int err_code)
 {
@@ -48,4 +49,17 @@ void	error_message_in_parse(int error_code)
 		printf("Error in File: Your map has too many players\n");
 	if (error_code == 3)
 		printf("Error in File: Your map is not closed by wall\n");
+}
+
+int	texture_error(char *path, char *message)
+{
+	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd(message, 2);
+	ft_putstr_fd(": ", 2);
+	if (path != NULL)
+		ft_putstr_fd(path, 2);
+	else
+		ft_putstr_fd("(null)", 2);
+	ft_putchar_fd('\n', 2);
+	return (0);
 }

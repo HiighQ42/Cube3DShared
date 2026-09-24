@@ -14,19 +14,25 @@
 
 int	load_texture(t_game *game, t_wall_texture *texture, char *path)
 {
-	texture->image.handle = mlx_xpm_file_to_image(game->mlx, path,
-			&texture->image.width, &texture->image.height);
-	if (texture->image.handle == NULL)
-		return (0);
+	t_image	*image;
+
+	image = &texture->image;
+	if (path == NULL || *path == '\0')
+		return (texture_error(path, "Missing texture path"));
+	image->handle = mlx_xpm_file_to_image(game->mlx, path, &image->width,
+			&image->height);
+	if (image->handle == NULL)
+		return (texture_error(path, "Cannot load XPM texture"));
+	if (image->width <= 0 || image->height <= 0)
+		return (texture_error(path, "Invalid texture dimensions"));
 	if (!map_texture_memory(texture))
 	{
-		mlx_destroy_image(game->mlx, texture->image.handle);
-		texture->image.handle = NULL;
-		return (0);
+		mlx_destroy_image(game->mlx, image->handle);
+		image->handle = NULL;
+		return (texture_error(path, "Cannot access texture pixels"));
 	}
 	return (1);
 }
-
 int	map_texture_memory(t_wall_texture *texture)
 {
 	t_image	*image;

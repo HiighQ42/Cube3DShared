@@ -126,6 +126,6 @@ int						*read_through_list(t_prelist *list);
 int						prep_for_read_through_list(int **ret,
 							int *element_count);
 void					free_utils(char *str, char **tab);
-
+int						texture_error(char *path, char *message);
 void					print_info(t_Data *data);
 #endif
