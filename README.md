@@ -28,13 +28,6 @@ This project targets Linux and uses the Linux version of MiniLibX. You need:
 - X11 development libraries and a running graphical session.
 - The Linux MiniLibX source directory at `minilibx-linux/`.
 
-On Debian or Ubuntu, install the system packages with:
-
-```sh
-sudo apt update
-sudo apt install build-essential libx11-dev libxext-dev libbsd-dev zlib1g-dev
-```
-
 The repository's Makefile runs `make` inside `minilibx-linux/`. That directory is not included in this repository, so add the MiniLibX source there before building:
 
 ```sh
@@ -92,15 +85,9 @@ C 120,180,255
 
 RGB values must be in the range 0–255. The map must be enclosed by walls. See [maps/test.cub](maps/test.cub) for a runnable example.
 
-## Technical overview
-
-- **Language:** C
-- **Graphics:** MiniLibX for Linux
-- **Rendering:** DDA ray traversal and per-column textured wall drawing
-- **Build flags:** `-Wall -Wextra -Werror`
-- **Project layout:** application headers in `inc/`, implementation in `src/`, sample scenes in `maps/`, textures in `textures/`, and the permitted 42 Libft functions in `libft/`.
 
 ## Resources
+, including raycasting and map-parsing concepts, debugging approaches, and texture-path or invalid-texture error handling. AI suggestions were reviewed and adapted by the project authors; they are responsible for understanding and validating the submitted code.
 
 - [cub3D subject](https://github.com/42cursus/cub3d) — project goals and scene format.
 - [Lode's Computer Graphics Tutorial: Raycasting](https://lodev.org/cgtutor/raycasting.html) — raycasting and DDA concepts.
@@ -111,4 +98,4 @@ RGB values must be in the range 0–255. The map must be enclosed by walls. See 
 
 ### AI use
 
-AI tools were used as a support resource for discussing implementation questions and preparing documentation, including raycasting and map-parsing concepts, debugging approaches, and texture-path or invalid-texture error handling. AI suggestions were reviewed and adapted by the project authors; they are responsible for understanding and validating the submitted code.
+AI tools were used as a support resource for discussing implementation questions and preparing documentation.
